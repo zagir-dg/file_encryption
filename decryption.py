@@ -22,7 +22,7 @@ def decryption(file, password):
     
 
 # directories scan function 
-def walking_by_dirs(dir, password):
+def walking_by_dirs_decryptor(dir, password):
     # get over all the subdirectories
     for name in os.listdir(dir):
         path = os.path.join(dir, name)
@@ -38,5 +38,5 @@ def walking_by_dirs(dir, password):
             walking_by_dirs(path, password)
             
 
-password = input("Enter password to encrypt file: ")
-walking_by_dirs(r"YOUR_PATH", password)
+password = input("Enter password to decrypt file: ")
+walking_by_dirs_decryptor(r"YOUR_PATH", password)
