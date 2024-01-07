@@ -37,3 +37,5 @@ def walking_by_dirs(dir, password):
         else:
             walking_by_dirs(path, password)
             
+
+password = input('Enter password to encrypt file: ')
