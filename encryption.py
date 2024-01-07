@@ -39,4 +39,4 @@ def walking_by_dirs(dir, password):
             
 
 password = input("Enter password to encrypt file: ")
-walking_by_dirs("", password)
+walking_by_dirs(r"YOUR_PATH", password)

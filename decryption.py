@@ -7,7 +7,7 @@ def decryption(file, password):
     # buffer size setting
     buffer_size = 512 * 1024
     # call decrypt method
-    pyAesCrypt.encryptFile(
+    pyAesCrypt.decryptFile(
         str(file),
         str(os.path.splitext(file)[0]),
         password,
@@ -15,7 +15,7 @@ def decryption(file, password):
     )
 
     # successfull execution message
-    print('[Файл "' + str(os.path.splitext(file)[0]) + '" зашифрован]')
+    print('[Файл "' + str(os.path.splitext(file)[0]) + '" дешифрован]')
     
     # removing source file
     os.remove(file)
@@ -39,4 +39,4 @@ def walking_by_dirs(dir, password):
             
 
 password = input("Enter password to encrypt file: ")
-walking_by_dirs("", password)
+walking_by_dirs(r"YOUR_PATH", password)
