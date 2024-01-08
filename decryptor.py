@@ -35,7 +35,7 @@ def walking_by_dirs_decryptor(dir, password):
                 print(ex)
         # else continue searching files
         else:
-            walking_by_dirs(path, password)
+            walking_by_dirs_decryptor(path, password)
             
 
 password = input("Enter password to decrypt file: ")
